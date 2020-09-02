@@ -1,13 +1,13 @@
 //return a reversed string
 function reverse(str) {
 
-  var newString = "";
-  
-	for (var i = str.length - 1; i >= 0; i--) {
+  	var newString = "";
+	
+  	for (var i = str.length - 1; i >= 0; i--) {
 		newString += str[i];
 	}
   
-  return newString;
+  	return newString;
   
 }
 
@@ -16,17 +16,17 @@ function lettersOnly(str) {
 
 	const regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
 
-  return str.replace(regex, '').toUpperCase().split(' ').join('');
+	return str.replace(regex, '').toUpperCase().split(' ').join('');
   
 }
 
 //return true if two strings are the same, ignoring whitespace and punctuation
 function compare(one, two) {
 
-  var upperOne = lettersOnly(one);
-  var upperTwo = lettersOnly(two);
+  	var upperOne = lettersOnly(one);
+  	var upperTwo = lettersOnly(two);
 
-  if (upperOne.localeCompare(upperTwo) === 0) {
+  	if (upperOne.localeCompare(upperTwo) === 0) {
 		return true;
 	} else {
 		return false;
@@ -39,11 +39,11 @@ function palindrome(sentence) {
 
 	let revSentence = reverse(sentence);
 
-  if (compare(sentence, revSentence)) {
-    console.log(sentence + " is a palindrome");
+ 	 if (compare(sentence, revSentence)) {
+    		console.log(sentence + " is a palindrome");
 		return true;
 	} else {
-    console.log(sentence + " is not a palindrome");
+    		console.log(sentence + " is not a palindrome");
 		return false;
 	}	
 
@@ -59,14 +59,14 @@ function anagram(str1, str2) {
 
 	for (var i = 0; i < word1.length; i++) {
 
-    tracker = word2.search(word1[i]);
+   		tracker = word2.search(word1[i]);
 
 		if (tracker == -1) {
 			console.log(str2 + " is not an anagram of " + str1);
 			return false;
 		} else {
-      word2 = word2.slice(0, tracker) + word2.slice(tracker + 1);
-      console.log(word1 + " " + word2);
+      			word2 = word2.slice(0, tracker) + word2.slice(tracker + 1);
+      			console.log(word1 + " " + word2);
 		}
     
 	}
